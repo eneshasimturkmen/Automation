@@ -2,7 +2,6 @@
 Feature:Register Functionality
 
 
-
   Scenario:User is on the homepage
     Given User navigate to homepage
     Then Verify that home page is visible successfully
@@ -11,8 +10,7 @@ Feature:Register Functionality
     When user enter name and email address
     And user clicks SignUp button
     Then verify that ENTER ACCOUNT INFORMATION is visible
-
-
+    And fill details following information
 
 
   #1. Launch browser
