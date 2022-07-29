@@ -55,6 +55,36 @@ public class BasePage {
     @FindBy(id = "optin")
     public WebElement optincheckbox;
 
+    @FindBy(id = "first_name")
+    public WebElement firstname;
+    
+    @FindBy(id = "last_name")
+    public WebElement lastname;
+
+    @FindBy(id = "company")
+    public WebElement company;
+
+    @FindBy(id = "address1")
+    public WebElement addressOne;
+
+    @FindBy(id = "address2")
+    public WebElement addressTwo;
+    @FindBy(id = "state")
+    public WebElement state;
+
+    @FindBy(id = "city")
+    public WebElement city;
+    @FindBy(id = "zipcode")
+    public WebElement zipcode;
+
+    @FindBy(id = "mobile_number")
+    public WebElement mobile_number;
+
+    @FindBy(id = "country")
+    public WebElement country;
+
+
+
 
 
 

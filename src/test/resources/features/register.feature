@@ -2,8 +2,7 @@
 Feature:Register Functionality
 
 
-
-  Scenario:User is on the homepage
+  Scenario: user is on the homepage
     Given User navigate to homepage
     Then Verify that home page is visible successfully
     When User clicks on Signup button
@@ -11,7 +10,27 @@ Feature:Register Functionality
     When user enter name and email address
     And user clicks SignUp button
     Then verify that ENTER ACCOUNT INFORMATION is visible
+    And fill details following information
+    And user select checkboxone
+    And user select checkboxtwo
+    And user fill following details
+      | FirstName    | Michael     |
+      | LastName     | Jordan      |
+      | Company      | GoogleInc   |
+      | Address      | Cankaya     |
+      | Address2     | Melikgazi   |
+      | State        | Turkey      |
+      | City         | Kayseri     |
+      | ZipCode      | 3232        |
+      | MobileNumber | 55521251245 |
 
+
+    And user clicks on create account button
+    Then verify account created is visible
+    And user clicks on Continue button
+    Then Verify that Logged in as username is visible
+    And user clicks on Delete Account button
+    Then Verify that ACCOUNT DELETED! is visible and click Continue button
 
 
 

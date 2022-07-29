@@ -9,10 +9,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.it.Ma;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +48,9 @@ public class register_stepdefinition {
 
         page.signupBtn.click();
     }
+
+
+
     @Then("Verify New User Signup! visible")
     public void verify_new_user_signup_visible() {
         assertTrue(page.messageOne.isDisplayed());
@@ -104,31 +112,65 @@ public class register_stepdefinition {
     }
 
 
+    @And("user select checkboxone")
+    public void userSelectCheckboxone() {
 
+        JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,500)");
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(page.newslettercheckbox));
+        page.newslettercheckbox.click();
+
+
+    }
+
+    @And("user select checkboxtwo")
+    public void userSelectCheckboxtwo() {
+
+        page.optincheckbox.click();
+
+    }
 
     @And("user fill following details")
-    public void userFillFollowingDetails() {
+    public void userFillFollowingDetails(Map<String,String> informationTable) {
+
+
+        page.firstname.sendKeys(informationTable.get("FirstName"));
+        page.lastname.sendKeys(informationTable.get("LastName"));
+        page.company.sendKeys(informationTable.get("Company"));
+        page.addressOne.sendKeys(informationTable.get("Address"));
+        page.addressTwo.sendKeys(informationTable.get("Address2"));
+        page.state.sendKeys(informationTable.get("State"));
+        page.city.sendKeys(informationTable.get("City"));
+        page.zipcode.sendKeys(informationTable.get("ZipCode"));
+        page.mobile_number.sendKeys(informationTable.get("MobileNumber"));
+
+
     }
+
 
     @And("user clicks on create account button")
     public void userClicksOnCreateAccountButton() {
     }
 
-    @Then("verify {string} is visible")
+    @Then("verify account created is visible")
     public void verifyAccountCreatedIsVisible() {
     }
 
-    @And("user clicks on {string} button")
+    @And("user clicks on Continue button")
     public void userClicksOnContinueButton() {
     }
 
-    @Then("Verify that {string} is visible")
+    @Then("Verify that Logged in as username is visible")
     public void verifyThatLoggedInAsUsernameIsVisible() {
     }
 
-    @Then("Verify that {string} is visible and click {string} button")
-    public void verifyThatACCOUNTDELETEDIsVisibleAndClickContinueButton() {
+    @And("user clicks on Delete Account button")
+    public void userClicksOnDeleteAccountButton() {
     }
 
 
+    @Then("Verify that ACCOUNT DELETED! is visible and click Continue button")
+    public void verifyThatACCOUNTDELETEDIsVisibleAndClickContinueButton() {
+    }
 }
