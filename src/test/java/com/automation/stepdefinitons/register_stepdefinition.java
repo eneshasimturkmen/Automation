@@ -101,10 +101,34 @@ public class register_stepdefinition {
         Select year = new Select(page.years);
         year.selectByVisibleText("1996");
 
-
-
-
-
-
     }
+
+
+
+
+    @And("user fill following details")
+    public void userFillFollowingDetails() {
+    }
+
+    @And("user clicks on create account button")
+    public void userClicksOnCreateAccountButton() {
+    }
+
+    @Then("verify {string} is visible")
+    public void verifyAccountCreatedIsVisible() {
+    }
+
+    @And("user clicks on {string} button")
+    public void userClicksOnContinueButton() {
+    }
+
+    @Then("Verify that {string} is visible")
+    public void verifyThatLoggedInAsUsernameIsVisible() {
+    }
+
+    @Then("Verify that {string} is visible and click {string} button")
+    public void verifyThatACCOUNTDELETEDIsVisibleAndClickContinueButton() {
+    }
+
+
 }

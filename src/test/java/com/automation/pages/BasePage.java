@@ -49,6 +49,13 @@ public class BasePage {
     @FindBy(xpath = "//select[@id = 'years']")
     public WebElement years;
 
+    @FindBy(id = "newsletter")
+    public WebElement newslettercheckbox;
+
+    @FindBy(id = "optin")
+    public WebElement optincheckbox;
+
+
 
 
 
