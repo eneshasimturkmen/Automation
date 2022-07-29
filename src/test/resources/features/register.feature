@@ -11,6 +11,25 @@ Feature:Register Functionality
     And user clicks SignUp button
     Then verify that ENTER ACCOUNT INFORMATION is visible
     And fill details following information
+    And user select checkbox1
+    And user select checkbox2
+    And user fill following details
+      | FirstName     |
+      | LastName      |
+      | Company       |
+      | Address       |
+      | Address2      |
+      | State         |
+      | City          |
+      | Zipcode       |
+      | Mobile Number |
+
+  And user clicks Create Account button
+  Then verify 'ACCOUNT CREATED' is visible
+  And user Click 'Continue' button
+  Then Verify that 'Logged in as username' is visible
+  And Click 'Delete Account' button
+  Then Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
 
 
   #1. Launch browser
