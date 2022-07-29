@@ -83,6 +83,26 @@ public class BasePage {
     @FindBy(id = "country")
     public WebElement country;
 
+    @FindBy(xpath = "(//button[@class='btn btn-default'])[1]")
+    public WebElement createButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-primary']")
+    public WebElement continueButton;
+
+
+    @FindBy(xpath = "//h2[@class=\"title text-center\"]")
+    public WebElement accountcreatedTitle;
+
+    @FindBy(xpath = "//li[10]")
+    public WebElement LoggenInAsText;
+
+    @FindBy(linkText = "Delete Account")
+    public WebElement deleteAccountButton;
+
+
+
+
+
 
 
 

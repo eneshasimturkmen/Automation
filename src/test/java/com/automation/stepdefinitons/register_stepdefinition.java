@@ -151,26 +151,47 @@ public class register_stepdefinition {
 
     @And("user clicks on create account button")
     public void userClicksOnCreateAccountButton() {
+
+
+        page.createButton.click();
+
     }
 
-    @Then("verify account created is visible")
+    @Then("verify Account Created is visible")
     public void verifyAccountCreatedIsVisible() {
+
+        assertTrue(page.accountcreatedTitle.isDisplayed());
+
     }
 
     @And("user clicks on Continue button")
     public void userClicksOnContinueButton() {
+
+        page.continueButton.click();
+
     }
 
     @Then("Verify that Logged in as username is visible")
     public void verifyThatLoggedInAsUsernameIsVisible() {
+
+        assertTrue(page.LoggenInAsText.isDisplayed());
+
     }
 
     @And("user clicks on Delete Account button")
     public void userClicksOnDeleteAccountButton() {
+
+        page.deleteAccountButton.click();
+
+
+
     }
 
 
     @Then("Verify that ACCOUNT DELETED! is visible and click Continue button")
     public void verifyThatACCOUNTDELETEDIsVisibleAndClickContinueButton() {
     }
+
+
+
 }
