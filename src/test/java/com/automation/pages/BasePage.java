@@ -93,8 +93,8 @@ public class BasePage {
     @FindBy(xpath = "//h2[@class=\"title text-center\"]")
     public WebElement accountcreatedTitle;
 
-    @FindBy(xpath = "//li[10]")
-    public WebElement LoggenInAsText;
+    @FindBy(xpath = "//b/..")
+    public WebElement LoggenMessage;
 
     @FindBy(linkText = "Delete Account")
     public WebElement deleteAccountButton;
