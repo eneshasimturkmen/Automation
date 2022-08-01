@@ -28,9 +28,9 @@ Feature:Register Functionality
     And user clicks on create account button
     Then verify Account Created is visible
     And user clicks on Continue button
-    Then Verify that Logged in as username is visible
+    Then Verify that 'Logged in as username' is visible
     And user clicks on Delete Account button
-    Then Verify that ACCOUNT DELETED! is visible and click Continue button
+
 
 
 
