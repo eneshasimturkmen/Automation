@@ -26,6 +26,8 @@ import static org.junit.Assert.*;
 
 public class register_stepdefinition {
 
+    String firstName;
+
     BasePage page = new BasePage();
     Faker faker = new Faker();
 
@@ -62,7 +64,9 @@ public class register_stepdefinition {
     @When("user enter name and email address")
     public void userEnterNameAndEmailAddress() {
 
-        page.name.sendKeys(faker.name().firstName());
+        firstName = faker.name().firstName();
+        System.out.println("firstName = " + firstName);
+        page.name.sendKeys(firstName);
         page.emailaddress.sendKeys(faker.internet().emailAddress());
 
     }
@@ -171,11 +175,14 @@ public class register_stepdefinition {
 
     }
 
-    @Then("Verify that Logged in as username is visible")
-    public void verifyThatLoggedInAsUsernameIsVisible() {
+    @Then("Verify that {string} is visible")
+    public void verifyThatLoggedInAsUsernameIsVisible(String message) {
 
-        assertTrue(page.LoggenInAsText.isDisplayed());
 
+
+        message = "Logged in as " + firstName;
+        System.out.println("page.loggedMessage.getText() = " + page.LoggenMessage.getText());
+        assertTrue(page.LoggenMessage.getText().equalsIgnoreCase(message));
     }
 
     @And("user clicks on Delete Account button")
@@ -184,14 +191,6 @@ public class register_stepdefinition {
         page.deleteAccountButton.click();
 
 
-
     }
-
-
-    @Then("Verify that ACCOUNT DELETED! is visible and click Continue button")
-    public void verifyThatACCOUNTDELETEDIsVisibleAndClickContinueButton() {
-    }
-
-
 
 }
